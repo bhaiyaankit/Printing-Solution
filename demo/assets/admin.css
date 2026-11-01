@@ -1,0 +1,63 @@
+body.admin { background: var(--bg-alt); }
+.admin-header { background: #fff; border-bottom: 1px solid var(--line); }
+.admin-head-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 12px; padding-bottom: 12px; flex-wrap: wrap; }
+.admin-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.admin-main { padding-top: 24px; padding-bottom: 48px; }
+.small { font-size: .85rem; }
+
+.kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 20px; }
+.kpi { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+.kpi span { display: block; color: var(--muted); font-size: .82rem; font-weight: 600; }
+.kpi b { display: block; font-size: 1.7rem; color: var(--navy); line-height: 1.2; margin-top: 4px; font-variant-numeric: tabular-nums; }
+.kpi small { color: var(--muted); }
+.kpi.accent b { color: var(--red); }
+
+.admin-grid { display: grid; grid-template-columns: 1fr 340px; gap: 20px; align-items: start; }
+.side { display: grid; gap: 20px; }
+.panel { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; min-width: 0; }
+.panel h2 { font-size: 1.1rem; margin-bottom: 12px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+.panel-head h2 { margin: 0; }
+.panel-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.panel-tools input, .panel-tools select { padding: 8px 10px; border: 1px solid #cdd3dc; border-radius: 8px; background: #fff; }
+
+.table-wrap { overflow-x: auto; }
+.orders { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.orders th { text-align: left; color: var(--muted); font-weight: 600; font-size: .78rem; text-transform: uppercase; letter-spacing: .04em; padding: 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.orders td { padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.orders tr:hover td { background: #fafbfc; }
+.orders td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; }
+.orders select { padding: 5px 6px; border-radius: 8px; border: 1px solid #cdd3dc; background: #fff; font-size: .85rem; }
+.orders .who small, .orders .what small { display: block; color: var(--muted); }
+.empty-row { text-align: center; color: var(--muted); padding: 32px !important; }
+
+.todo, .list { list-style: none; padding: 0; margin: 0; }
+.todo li, .list li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: .9rem; display: flex; justify-content: space-between; gap: 8px; }
+.todo li:last-child, .list li:last-child { border-bottom: 0; }
+.list small { color: var(--muted); display: block; }
+.count { background: var(--red); color: #fff; border-radius: 999px; padding: 0 8px; font-weight: 800; font-size: .8rem; height: 20px; }
+.count.zero { background: var(--line); color: var(--muted); }
+
+.bars .bar-row { display: grid; grid-template-columns: 110px 1fr auto; gap: 8px; align-items: center; font-size: .85rem; margin-bottom: 8px; }
+.bars .bar-row span:first-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bars .track { background: var(--bg-alt); border-radius: 6px; height: 10px; overflow: hidden; }
+.bars .fill { background: var(--blue); height: 100%; border-radius: 6px; }
+.bars b { font-variant-numeric: tabular-nums; }
+
+.detail dl { display: grid; grid-template-columns: 130px 1fr; gap: 6px 12px; font-size: .92rem; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; }
+.detail .items { margin: 12px 0; padding: 0; list-style: none; }
+.detail .items li { border: 1px solid var(--line); border-radius: 10px; padding: 10px; margin-bottom: 8px; font-size: .9rem; }
+.detail .items small { color: var(--muted); display: block; }
+.detail .acts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+@media (max-width: 1020px) {
+  .admin-grid { grid-template-columns: 1fr; }
+  .kpis { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .kpis { grid-template-columns: 1fr 1fr; }
+  .detail dl { grid-template-columns: 1fr; }
+  .orders .hide-sm { display: none; }
+}

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staff Dashboard | Kwality Printer</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body class="admin">
+  <div class="demo-bar"><strong>Concept demo</strong> of the staff dashboard. The data lives only in this browser. <a href="index.html">← Back to shop</a></div>
+  <header class="admin-header">
+    <div class="wrap admin-head-inner">
+      <a class="logo" href="index.html"><span class="logo-mark">K</span><span class="logo-text">Kwality<b>Printer</b><small>Staff dashboard</small></span></a>
+      <div class="admin-actions">
+        <button class="btn btn-ghost btn-sm" id="seedBtn">Load sample orders</button>
+        <button class="btn btn-ghost btn-sm" id="exportBtn">Export CSV</button>
+        <button class="btn btn-ghost btn-sm" id="clearBtn">Clear data</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap admin-main">
+    <section class="kpis" id="kpis" aria-label="Key numbers"></section>
+
+    <section class="admin-grid">
+      <div class="panel">
+        <div class="panel-head">
+          <h2>Orders</h2>
+          <div class="panel-tools">
+            <input id="search" placeholder="Search name, order, product" aria-label="Search orders">
+            <select id="statusFilter" aria-label="Filter by status"><option value="">All statuses</option></select>
+          </div>
+        </div>
+        <div class="table-wrap"><table class="orders" id="ordersTable"></table></div>
+      </div>
+
+      <div class="side">
+        <div class="panel">
+          <h2>Today's to-do</h2>
+          <ul class="todo" id="todo"></ul>
+        </div>
+        <div class="panel">
+          <h2>Revenue by product</h2>
+          <div id="byProduct" class="bars"></div>
+        </div>
+        <div class="panel">
+          <h2>Quotes to follow up</h2>
+          <p class="muted small">Customers who priced a job but didn't order. Chasing these is the quickest extra revenue.</p>
+          <ul class="list" id="quotes"></ul>
+        </div>
+        <div class="panel">
+          <h2>Leads &amp; enquiries</h2>
+          <ul class="list" id="leads"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="overlay" id="overlay" hidden></div>
+  <div class="modal" id="orderModal" role="dialog" aria-modal="true" hidden>
+    <div class="modal-box"><button class="close" data-close aria-label="Close">×</button><div id="orderDetail"></div></div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/store.js"></script>
+  <script src="assets/admin.js"></script>
+</body>
+</html>
